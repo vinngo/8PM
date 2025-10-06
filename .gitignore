@@ -1,0 +1,21 @@
+# Xcode
+.DS_Store
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+DerivedData/
+.idea/
+
+# Swift Package Manager
+.build/
+Packages/
+
+# IMPORTANT: Don't commit secrets
+SupabaseConfig.swift
+
+# macOS
+.DS_Store
