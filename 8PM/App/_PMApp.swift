@@ -1,17 +1,16 @@
-//
-//  _PMApp.swift
-//  8PM
-//
-//  Created by Vincent Ngo on 10/5/25.
-//
-
 import SwiftUI
 
 @main
-struct _PMApp: App {
+struct EightPMApp: App {
+    
+    init() {
+        // Test Supabase connection
+        print("✅ Supabase connected to: \(SupabaseConfig.url)")
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
