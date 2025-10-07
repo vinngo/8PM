@@ -7,8 +7,9 @@ struct User: Codable, Identifiable {
     let avatarUrl: String?
     let bio: String?
     let isPublic: Bool
+    let tutorialCompleted: Bool
     let createdAt: Date
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case phone
@@ -16,6 +17,7 @@ struct User: Codable, Identifiable {
         case avatarUrl = "avatar_url"
         case bio
         case isPublic = "is_public"
+        case tutorialCompleted = "tutorial_completed"
         case createdAt = "created_at"
     }
 }

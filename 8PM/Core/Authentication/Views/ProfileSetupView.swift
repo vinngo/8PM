@@ -79,6 +79,9 @@ struct ProfileSetupView: View {
         .onAppear {
             isDisplayNameFocused = true
         }
+        .navigationDestination(isPresented: $viewModel.profileCreated) {
+            OnboardingView()
+        }
     }
 }
 
