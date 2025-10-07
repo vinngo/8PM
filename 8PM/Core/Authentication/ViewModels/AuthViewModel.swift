@@ -9,6 +9,7 @@ class AuthViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var codeSent: Bool = false
+    @Published var isVerified: Bool = false
 
     private var phoneNumberRaw: String = ""
 
@@ -62,6 +63,7 @@ class AuthViewModel: ObservableObject {
                 let formattedPhone = "+1\(phoneNumberRaw)"
                 try await SupabaseService.shared.client.auth.verifyOTP(phone: formattedPhone, token: verificationCode, type: .sms)
                 errorMessage = nil
+                isVerified = true
             } catch {
                 errorMessage = error.localizedDescription
             }

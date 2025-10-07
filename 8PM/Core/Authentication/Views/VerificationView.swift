@@ -89,6 +89,9 @@ struct VerificationView: View {
         .onAppear {
             isCodeFieldFocused = true
         }
+        .navigationDestination(isPresented: $viewModel.isVerified) {
+            ProfileSetupView()
+        }
     }
 }
 
