@@ -1,14 +1,14 @@
 import Foundation
 
-struct User: Codable, Identifiable {
+struct User: Decodable, Identifiable {
     let id: UUID
     let phone: String
     let displayName: String
     let avatarUrl: String?
     let bio: String?
-    let isPublic: Bool
+    let isPublic: Bool?
     let tutorialCompleted: Bool
-    let createdAt: Date
+    let createdAt: Date?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -20,4 +20,10 @@ struct User: Codable, Identifiable {
         case tutorialCompleted = "tutorial_completed"
         case createdAt = "created_at"
     }
+}
+
+struct CreateUser: Encodable {
+    let id: UUID
+    let phone: String
+    let displayName: String
 }

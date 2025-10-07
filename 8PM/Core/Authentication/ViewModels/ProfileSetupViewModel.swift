@@ -31,12 +31,7 @@ class ProfileSetupViewModel: ObservableObject {
                 let trimmedDisplayName = displayName.trimmingCharacters(in: .whitespacesAndNewlines)
 
                 // Create user profile in Supabase users table
-                let userProfile: [String: Any] = [
-                    "id": userId.uuidString,
-                    "phone": phone,
-                    "display_name": trimmedDisplayName,
-                    "is_public": true
-                ]
+                let userProfile = CreateUser(id: userId, phone: phone, displayName: trimmedDisplayName)
 
                 try await SupabaseService.shared.client
                     .from("users")
